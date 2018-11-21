@@ -1,0 +1,75 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplary Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id ="container">
+
+        <div id="menubar">
+            <div class ="menuoption">
+
+                <a href="{% url 'post_list' %}">Main Page</a>
+
+            </div>
+
+            <div class ="menuoption">
+
+                    <a href="{% url 'about_me' %}">About Me</a>
+            </div>
+
+            <div class ="menuoption">
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'new_post' %}">Add Post</a>
+                {% else %}
+                    Add Post
+                {% endif %}
+
+            </div>
+
+            <div class ="menuoption">
+
+                {% if not user.is_authenticated %}
+
+                    <a href="{% url 'login' %}">Log In</a>
+                {% else %}
+                    <a href="{% url 'logout' %}">Log Out</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div style="word-wrap: break-word; width:750px; float:left; margin-top: 30px; margin-left: 25px; margin-right: 25px;">
+
+            {% block content%}
+            {% endblock %}
+
+        </div>
+
+        <div id="sidebar">
+            <h3>Recent posts:</h3>
+            {%for post in posts %}
+                <a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a>
+                <br>
+            {% endfor %}
+
+        </div>
+
+        <div id="footer">
+
+
+        &copy; Dariusz Giemza 2018
+
+        </div>
+
+    </div>
+</body>
+</html>

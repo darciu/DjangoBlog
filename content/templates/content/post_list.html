@@ -1,0 +1,15 @@
+
+{% extends 'content/main_page.html' %}
+
+{% block content %}
+    {%for post in posts %}
+
+        {{post.date|date:"M d, Y" }}
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+        <a href="{% url 'post_detail' pk=post.pk %}">{{post.text|truncatechars:105}}</a>
+        <hr>
+
+    {% endfor %}
+
+
+{% endblock %}

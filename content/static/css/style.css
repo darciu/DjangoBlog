@@ -1,0 +1,65 @@
+body
+{
+	background-color:#d0dbe0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#container
+{
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+
+#menubar
+{
+    background-color:#80b299;
+    color:#e3e5e8;
+    margin-top: 20px;
+    height: 70px;
+    padding: 4px;
+    text-align: center;
+    line-height: 60px;
+    letter-spacing:4px;
+
+}
+
+.menuoption
+{
+    float:left;
+    height: 62px;
+    font-size: 20px;
+    border-right: 2px dotted #e3e5e8;
+    min-width:197px;
+
+}
+
+
+#sidebar
+{
+    float:left;
+    background-color:#84b59c;
+    padding: 10px;
+    min-height: 450px;
+    width:180px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align:center;
+    color: #353638;
+
+}
+
+#footer
+{
+    clear:both;
+    color: #a8abad;
+    text-align:right;
+}
+
+h1
+{
+    color:white;
+}

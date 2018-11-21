@@ -1,0 +1,30 @@
+{% extends 'content/main_page.html' %}
+
+{% block content %}
+
+    {{post.date|date:"M d, Y" }} <br>
+    {{post.date|date:"G : i"}}<br><br>
+    <h3>{{post.title}}<br></h3>
+    {{post.text|linebreaksbr}}
+    <br>
+    {{post.author}}
+    <br><br>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'edit_post' pk=post.pk %}">EDIT</a>
+    {% endif %}
+    <br>
+    <br>
+    Comments:
+    <br><br>
+    {%for comment in comments%}
+
+    {{comment.text}}
+    {{comment.date}}
+    <br><br>
+
+    {% endfor %}
+    <br>
+    <a href="{% url 'new_comment' pk=post.pk %}">Add new comment</a>
+
+{% endblock%}
