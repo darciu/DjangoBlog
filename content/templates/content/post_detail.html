@@ -7,7 +7,7 @@
     <h3>{{post.title}}<br></h3>
     {{post.text|linebreaksbr}}
     <br>
-    {{post.author}}
+    <i>Author: {{post.author}}</i>
     <br><br>
 
     {% if user.is_authenticated %}
@@ -15,15 +15,26 @@
     {% endif %}
     <br>
     <br>
-    Comments:
-    <br><br>
-    {%for comment in comments%}
 
-    {{comment.text}}
-    {{comment.date}}
-    <br><br>
+    {% if comments.count %}
 
-    {% endfor %}
+        Comments:
+        <br><br>
+
+        {%for comment in comments%}
+
+            {{comment.text}}<br>
+            <i>Posted by: {{comment.author}}; {{comment.date}}</i>
+            <br><br>
+
+        {% endfor %}
+
+    {% else %}
+
+    No comments yet<br>
+
+    {% endif %}
+
     <br>
     <a href="{% url 'new_comment' pk=post.pk %}">Add new comment</a>
 

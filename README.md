@@ -1,6 +1,6 @@
 # DjangoBlog
 
-##Brief description 
+## Brief description 
 
 Web blog application created with Django 2.1.2. 
 There are following functionalities:
@@ -20,6 +20,10 @@ Install Django 2.x version, Python 3.x version
 
 Open up terminal (shell) in 'blog' main folder. Next type in: 'python manage.py runserver'.
 Next you can open application in your browser putting this address: http://127.0.0.1:8000/
+
+## Development
+
+There will be some functionalities added and CSS improved.
 
 ## Author
 
